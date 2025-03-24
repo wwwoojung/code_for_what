@@ -62,12 +62,12 @@ if( $(".colorChip").length > 0 && isTrue ){
     }).join('');
 
     // 슬라이드
-    colorSlide = BOTTOMJSON.COLORCHIP[FILTER_COLOR[0]].ftp.map(url => `<li class="swiper-slide"><img src="/design/justmysize/ECHO/product${url}"></li>`).join('');
+    colorSlide = BOTTOMJSON.COLORCHIP[FILTER_COLOR[0]].ftp.map(url => `<li class="swiper-slide"><img src="${url}"></li>`).join('');
 
     // 디테일 슬라이드
     detailSlide = BOTTOMJSON.PRDSLIDE
         .filter(slide => slide.type === TOPJSON.slide)
-        .flatMap(slide => slide.ftp.map(url => `<li class="swiper-slide"><img src="/design/justmysize/ECHO/product${url}"></li>`))
+        .flatMap(slide => slide.ftp.map(url => `<li class="swiper-slide"><img src="${url}"></li>`))
         .join('');
 
     var colorNameStyle = `background:${BOTTOMJSON.COLORCHIP[FILTER_COLOR[0]].code};${BOTTOMJSON.COLORCHIP[FILTER_COLOR[0]].code === '#FFFFFF' ? 'border:solid 1px #dadada' : ''}`;
@@ -81,7 +81,7 @@ if( $(".colorChip").length > 0 && isTrue ){
                 <div class="swiper-wrapper">${colorSlide}</div>
                 <div class="swiper-button-next"></div><div class="swiper-button-prev"></div><div class="swiper-pagination"></div>
             </div>
-            <article><img src="/design/justmysize/ECHO/product/cdg007-nylon-hook/detail%20view.jpg"></article>
+            <article><img src="이미지 ftp"></article>
             <div class="swiper" id="prdDetailSwiper2">
                 <div class="swiper-wrapper">${detailSlide}</div>
                 <div class="swiper-button-next"></div><div class="swiper-button-prev"></div><div class="swiper-pagination"></div>
@@ -121,7 +121,7 @@ $(".color_chip li").click(function(e){
     var chanageColorSlide=[];
 
     for(var j=0; j < BOTTOMJSON.COLORCHIP[FILTER_COLOR[idx]].ftp.length; j++){
-        chanageColorSlide.push(`<li class="swiper-slide"><img src="/design/justmysize/ECHO/product${BOTTOMJSON.COLORCHIP[FILTER_COLOR[idx]].ftp[j]}"></li>`)
+        chanageColorSlide.push(`<li class="swiper-slide"><img src="${BOTTOMJSON.COLORCHIP[FILTER_COLOR[idx]].ftp[j]}"></li>`)
     };
 
     swiper1.removeAllSlides();
